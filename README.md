@@ -1,0 +1,2 @@
+# EJStones
+Amazon Basekit Template
