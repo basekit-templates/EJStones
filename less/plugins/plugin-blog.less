@@ -1,0 +1,400 @@
+// -------------------------------------
+// Blog Post Styling
+// -------------------------------------
+
+//  1.   Blog Search
+//  2.	 Blog Post List
+//  3.   Blog Post
+
+
+
+// -----------------------------
+// 1. Blog Search
+// -----------------------------
+
+
+.blogsearch {
+	margin-bottom: 30px;
+	@media @mobile {
+		margin-bottom: 15px;
+	}
+	.form-body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        .flex-display;
+        position: relative;
+		@media @mobile {
+			display: block;
+		}
+	}
+	legend {
+        color: @color__form-legend--text;
+        display: block;
+        font-family: @font__h2--font-family;
+        font-size: @font__h2--font-size;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin: 0;
+        padding: 10px 0;
+        margin-bottom: 10px;
+	}
+	label {
+		display: none;
+		height: 0;
+		visibility: hidden;
+	}
+    .form-group {
+        &:first-child {
+            .flex(1 0 auto);
+            margin-bottom: 0;
+        }
+
+        &:last-child {
+            .flex(0 0 auto);
+            .align-self(flex-display);
+            margin-bottom: 0;
+        }
+
+        @media @mobile {
+            width: 100%!important;
+        }
+    }
+
+	button {
+    	bottom: 0;
+    	right: 0;
+    	position: absolute;
+
+		@media @mobile {
+			margin-left: 0;
+			margin-top: 10px;
+			position: relative;
+		}
+	}
+}
+
+
+
+// -----------------------------
+// 2. Blog Post List
+// -----------------------------
+
+
+// Blog Post List Layout
+.blogpostlist {
+	.post-article {
+		margin-bottom: 50px;
+		display: inline-block;
+		width: 100%;
+		vertical-align: top;
+		background-color: @color-swatch3;
+		padding: 40px;
+		.boxshadow;
+		@media @tablet800px {
+			margin-right: 0;
+		}
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+
+		.post-image {
+			background-color: transparent;
+			position: relative;
+			max-height: 250px;
+			@media @tablet800px {
+				max-height: 400px;
+			}
+			@media @mobile650px {
+				max-height: 300px;
+			}
+		}
+		.image {
+			display: inline-block;
+			line-height: 0;
+			max-height: 250px;
+			vertical-align: middle;
+			@media @tablet800px {
+				max-height: 400px;
+			}
+			@media @mobile650px {
+				max-height: 300px;
+			}
+		}
+		.timestamp {
+			color: @color__link--text;
+		}
+	}
+}
+
+.blogpostlist__post-article {
+		     display: flex;
+		     flex-direction: column;
+}
+
+.blogpostlist__post-content {
+            .flex-order(@order: 2);
+}
+
+.blogpostlist__post-image {
+	            .flex-order(@order: 1);
+}
+
+.blogpostlist__post-footer {
+		            .flex-order(@order: 0);
+	}
+
+.responsivecolumns {
+	.bk-blogpostlist {
+		.post-article {
+			margin-right: 0;
+			width: 100%;
+		}
+	}
+}
+
+// Blog Post Header Text
+.post-header {
+	a {
+		color: @color__blogpost-title--text;
+		font-weight: @font__h2--font-weight;
+		text-decoration: none;
+		.transition(all .5s ease-out);
+
+		&:hover {
+			color: @color__blogpost-title--text;
+		}
+	}
+}
+
+// Blog Post Excerpt Text
+.post-excerpt p {
+	padding: 4px 0 16px;
+}
+
+// Read More Link
+.read-more {
+	display: inline-block;
+	font-family: @font__button--font-family;
+	font-size: @font__button--font-size;
+	font-weight: @font__button--font-weight;
+	letter-spacing: @font__button--letter-spacing;
+	margin: 0 0 12px;
+	padding: 16px 12px;
+	text-align: center;
+	.transition(all .5s ease-out);
+}
+
+// Datestamp
+.post-footer time {
+	color: lighten(@font-swatch5-color, 15%);
+	font-size: bkscale(@font__p--font-size, 0.9);
+}
+
+@-webkit-keyframes icon-bounce {
+	0% {transform:translateX(0);}
+	50% {transform:translateX(-4px);}
+	100% {transform:translateX(-8px);}
+}
+
+@keyframes icon-bounce {
+	0% {transform:translateX(0);}
+	50% {transform:translateX(-4px);}
+	100% {transform:translateX(-8px);}
+}
+
+// Pagination
+
+.blogpostlist__pagination-list {
+	.flex-display;
+	.justify-content(space-between);
+}
+
+.post-pagination {
+	.button--previous {
+		position: relative;
+		&:before {
+			display: none;
+		}
+		&:hover:before {
+    		.animation(icon-bounce, 1.5s, linear, infinite, normal);
+		}
+	}
+	.button--next {
+		position: relative;
+		&:hover:before {
+    		.animation(icon-bounce, 1.5s, linear, infinite, reverse);
+		}
+	}
+}
+
+// Pagination Footer
+
+.blog-post-list {
+	margin-top: 20px
+}
+
+
+
+// -----------------------------
+// 3. Blog Post
+// -----------------------------
+
+
+// Blog Post Body
+.bk-blogpost {
+	.body-content {
+		margin: 0 auto;
+		max-width: 750px;
+	}
+
+	.post-content {
+		margin-top: 0;
+	}
+
+	// Blog Post Title
+	.post-title {
+		color: @color__blogpost-title--text;
+		padding: 0 0 30px;
+		text-align: center;
+		@media @mobile {
+			font-size: bkscale(@font__h1--font-size, 0.8);
+			line-height: bkscale(@font__h1--font-size, 0.92);
+			margin: 0;
+			text-align: left;
+		}
+	}
+
+	// Post Feature Image
+	.post-image {
+		position: relative;
+		text-align: center;
+		.image-link {
+			/*background-position: center center;
+			background-size: cover;
+			height: 425px;*/
+			display: none;
+			visibility: hidden;
+		}
+		.image {
+			display: none;
+			line-height: 0;
+			visibility: hidden;
+		}
+	}
+
+	.post-body {
+		p img, img {
+			margin: 20px 0;
+		}
+	}
+
+	// Date
+	.post-footer time {
+		display: inline-block;
+		width: 24%;
+		@media @mobile {
+			display: block;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+	}
+
+	// Blog Footer
+	.post-footer {
+		border-top: 1px solid rgb(237,237,237);
+		margin: 60px auto 40px;
+		padding-top: 35px;
+		@media @mobile {
+			margin: 35px 0 15px;
+			max-width: 100%;
+		}
+	}
+}
+
+// Sharing Buttons
+.sharing-links {
+	margin-top: 15px;
+	@media @mobile {
+		margin-top: 30px;
+	}
+	.network-item {
+		@media @mobile {
+			width: 100%;
+		}
+	}
+	button {
+		font-size: 14px;
+		@media @mobile {
+			width: 100%;
+		}
+	}
+}
+
+// Category & Tags
+.post-attributes {
+	display: inline-block;
+	margin: 0 0 10px;
+	width: 75%;
+	text-align: right;
+	@media @mobile {
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+	.post-category, .post-tags {
+		display: inline-block;
+		width: auto;
+	}
+	.post-category,
+	.post-tags {
+		margin-bottom: 3px;
+		margin-left: 20px;
+		@media @mobile {
+			margin-bottom: 8px;
+			margin-left: 0;
+		}
+	}
+
+	.tag-item {
+		margin-right: 2px;
+	}
+
+	// Label
+	p, a {
+		color: @font__h3--color;
+		display: inline-block;
+		font-family: @font__button--font-family;
+		font-size: bkscale(@font__button--font-size, 0.9);
+		font-weight: 600;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+	.category-title,
+	.tags-title {
+
+		// Double Colon For Label
+		&:after {
+			content: ":";
+			font-size: 16px;
+			margin: 0 5px 0 0;
+			position: relative;
+		}
+	}
+
+	// Categorys
+	.category-link {
+		color: @font__p--color;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	// Tags
+	.tag-link {
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

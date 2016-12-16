@@ -1,0 +1,721 @@
+// -----------------------------
+// Table of Contents
+// -----------------------------
+
+// 1.   Product List
+// 2.   Single Product
+// 3.   Product Summary
+// 4.   Basket Widget
+// 5.   Basket Summary
+
+
+
+// -----------------------------
+// 1. Product List
+// -----------------------------
+
+
+// Product List
+.product-list {
+    display: block;
+    .clearfix;
+}
+
+.ecomproductslist__form {
+    .flex-display;
+    .justify-content(space-between);
+    .flex-wrap(wrap);
+
+    @media @mobile650px {
+        display: block;
+    }
+}
+
+// Product Item
+.product-item {
+    display: inline-block;
+    float: left;
+    position: relative;
+    margin-bottom: 20px;
+    margin-right: 3.33%;
+    width: 31%;
+    vertical-align: top;
+    &:nth-child(3n) {
+        margin-right: 0;
+    }
+    &:nth-child(3n+1) {
+        clear: left;
+    }
+    // Display at 50% at tablet
+    @media @tablet800px {
+        width: 48%;
+        &:nth-child(2n) {
+            margin-right: 0!important;
+        }
+        &:nth-child(3n) {
+            margin-right: 3.33%;
+        }
+        &:nth-child(2n) {
+            clear: right;
+        }
+        &:nth-child(4n) {
+            clear: none;
+        }
+    }
+    // Display 100% at mobile
+    @media @mobile {
+        margin-right: 0!important;
+        width: 100%;
+    }
+
+    .image-link,
+    .product-item-image {
+        line-height: 250px;
+        height: 250px;
+    }
+}
+
+// Products Title
+.listing-title {
+    padding-bottom: 35px;
+    @media @mobile {
+        padding: 0 0 20px;
+    }
+}
+
+// Product Filters
+.product-filters {
+    .ecomproductslist__form-body {
+
+        @media @mobile650px {
+            display: block;
+        }
+    }
+
+    // Search Input
+    .fieldset--search,
+    .fieldset--filters {
+        margin-bottom: 5px;
+        .form-body {
+            .flex-display;
+            .flex-wrap(wrap);
+
+            @media @mobile650px {
+                display: block;
+            }
+        }
+        .form-group {
+            .flex-grow(1);
+            @media @mobile650px {
+                width: 100%;
+            }
+        }
+        select {
+            height: 50px;
+            padding: 0 25px 0 10px;
+            width: 100%;
+        }
+    }
+    .fieldset--search {
+        .flex(1 1 auto);
+        margin-bottom: 5px;
+        .form-group:last-child {
+            margin-right: 0;
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+        }
+        .form-body {
+            position: relative;
+        }
+        .form-group {
+            @media @mobile650px {
+                width: 100%;
+            }
+        }
+    }
+
+    .fieldset--filters {
+        .flex(1 1 auto);
+
+        .form-group:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.responsivecolumns .column {
+
+    .product-filters .fieldset--search .form-group:last-child {
+        text-align: right;
+        right: 0;
+    }
+
+    .product-filters .form-group {
+        margin-right: 0;
+        width: 100%;
+    }
+    .product-item {
+        margin-right: 0;
+        width: 100%;
+    }
+}
+
+.product-filters .fieldset--search .form-group {
+    &:last-child {
+        @media @mobile650px {
+            right: 0;
+            width: auto;
+        }
+    }
+}
+
+button.ecomproductslist__button {
+    background: transparent image('/images/search-icon.png');
+    background: transparent image('/images/search-icon.svg'), none;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: transparent;
+    margin-top: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+    height: 48px;
+    width: 48px;
+
+    &:hover {
+        background-color: transparent;
+    }
+}
+
+
+
+// Number of Products
+.listing-order {
+    padding: 10px 0 30px;
+}
+
+.product-item-details {
+    text-align: center;
+    margin-top: 0;
+
+    .product-item-title {
+        font-family: @font__p--font-family;
+        font-size: @font__p--font-size;
+        font-weight: 400;
+        @media @mobile {
+            font-size: bkscale(@font__h2--font-size, 0.70);
+        }
+        a {
+            color: @color__ecomproduct-title--text;
+            text-decoration: none;
+        }
+    }
+    .product-item-price {
+        padding-bottom: 0;
+    }
+}
+
+// Pagination
+.listing-pagination {
+    // Pagination Buttons
+    .button {
+        height: inherit;
+        background-color: lighten(@color__button--background, 35%);
+        margin: 30px 0 20px;
+        padding: 10px 15px;
+        &:hover {
+            background-color: lighten(@color__button--background, 10%);
+        }
+    }
+    .current .button {
+        background-color: @color__button--background;
+    }
+    // Previous Button Icon
+    .button--previous {
+        position: relative;
+        &:before {
+            font-size: 10px;
+        }
+        &:hover:before {
+            .animation(icon-bounce, 1.5s, ease, infinite, normal);
+        }
+    }
+    // Next Button Icon
+    .button--next {
+        position: relative;
+        &:after {
+            font-size: 10px;
+        }
+        &:hover:after {
+            .animation(icon-bounce, 1.5s, ease, infinite, reverse);
+        }
+    }
+}
+
+
+
+// -------------------------------
+// 2. Single Product
+// -------------------------------
+
+// Style for tablet and desktop
+
+.ecomproduct {
+    display: inline-block;
+    width: 100%;
+    margin: 30px auto;
+    .image-link,
+    .gallery-item {
+        background-color: transparent;
+    }
+    .product-title {
+        color: @color__ecomproduct-title--text;
+    }
+    .product-price {
+        font-family: @font__p--font-family;
+        font-size: @font__h4--font-size;
+    }
+    .product-article {
+        @media only screen and (min-width: 450px) {
+            float: left;
+            width: 100%;
+        }
+    }
+
+    // Product images
+    // --------------
+
+    .product-images {
+        float: left;
+        margin-bottom: 1em;
+        width: 100%;
+        @media only screen and (min-width: 900px) {
+            margin-right: 4%;
+            width: 51%;
+        }
+        .image-link {
+            height: auto;
+            background-color: transparent;
+            background-image: none !important;
+        }
+        .image {
+            display: block;
+            max-height: 600px;
+            vertical-align: top;
+            margin: 0 auto;
+            @media only screen and (max-width: 900px) {
+                max-height: 450px;
+            }
+            @media only screen and (max-width: 600px) {
+                max-height: 300px;
+            }
+            @media @mobile {
+                max-height: 250px;
+            }
+        }
+    }
+
+    .product-gallery {
+        text-align: center;
+        .image--thumb {
+            max-height: 80px;
+            @media @mobile {
+                max-height: 60px;
+            }
+        }
+    }
+
+    // Product Content
+    // ---------------
+
+    .product-content {
+        @media only screen and (min-width: 900px) {
+            display: inline-block;
+            width: 45%;
+        }
+    }
+
+    // Product Options
+
+    .product-article {
+        // Product Form Group (Select & Buttons)
+        .product-actions {
+            margin: 20px 0;
+            position: relative;
+
+            // Variations Wrapper
+            .ecomproduct__fieldset {
+                margin-bottom: 30px;
+                .ecomproduct__form-group {
+                    display: block;
+                }
+            }
+            .form {
+                display: inline-block;
+                margin-right: 10px;
+                @media @mobile {
+                    width: 100%;
+                }
+            }
+            .form-group {
+                margin-bottom: 0;
+            }
+
+            // Variations Select
+            .ecomproduct__select {
+                padding: 0 10px;
+            }
+
+            .button {
+                height: inherit;
+                margin: 10px 0;
+            }
+
+            // Add to Basket Button
+            button.icon--add:before {
+                content:"";
+                display: none;
+            }
+
+            button.icon--add.added {
+                background: green;
+                &:before {
+                    content: "\f00c";
+                    display: inline;
+                }
+            }
+
+            // View Basket Button
+            .view-basket-wrap a {
+                background-color: fade(@color__secondary, 75%);
+                color: @font-swatch7-color;
+                &:hover {
+                    background-color: fade(@color__secondary, 65%);
+                    color: @font-swatch7-color;
+                }
+            }
+        }
+
+        // Inline Cart Buttons
+        .form-group,
+        .product__input,
+        .product-button {
+            display: inline-block;
+            background-color: transparent;
+            @media @mobile {
+                display: block;
+            }
+        }
+
+        // Add To Basket Button
+        .product__input {
+            margin-top: 20px;
+        }
+
+        // View Basket Button Wrapper
+        .view-basket-wrap {
+            display: inline-block;
+            @media @mobile {
+                left: initial;
+                margin-top: 15px;
+                position: relative;
+            }
+
+            // View Basket Button
+            .product__button {
+                background-color: fade(@font-swatch7-background-color, 50%);
+                .transition(.5s all ease-out);
+                &:hover {
+                    background-color: @font-swatch7-background-color;
+                }
+            }
+        }
+    }
+
+    // Remove Background Colour from Images
+    .product-item-image,
+    .product-item-image .image-link,
+    .product-gallery .gallery-item,
+    .product-image .image-link,
+    .basket-item-image .image-link {
+        background-color: transparent;
+    }
+
+    // Product Category & Tags
+    .product-attributes {
+        margin: 50px 0 20px;
+        p, a {
+            font-family: @font__button--font-family;
+            font-size: bkscale(@font__button--font-size, 0.9);
+            font-weight: @font__h4--font-weight;
+            text-transform: uppercase;
+        }
+        .product-category,
+        .product-tags {
+            display: inline-block;
+            margin: 0 20px 10px 0;
+        }
+        .tag-link,
+        .category-link {
+            background-color: @color-swatch7;
+            color: @color-swatch5;
+            padding: 2px 8px;
+            .transition(all .5s ease-out);
+            &:hover {
+                background-color: darken(@color-swatch7, 8%);
+                text-decoration: none;
+            }
+        }
+        // Tags Label
+        .product-attribute-title, .tags-title {
+            color: @color-swatch4;
+            padding-right: 5px;
+        }
+        .product-attribute-title:after {
+            content:":";
+        }
+    }
+
+}
+
+
+
+// Ecom forms
+
+// Styles are set in 'less > forms-and-buttons.less'
+
+.responsivecolumns {
+    .product-article {
+        float: left;
+        width: 100%;
+    }
+    .product-images {
+        float: left;
+        margin-bottom: 1em;
+        width: 100%;
+    }
+    .product-content {
+        width: 100%;
+    }
+    .product-images .image {
+        max-height: 250px;
+    }
+    .product-actions .form .button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .view-basket-wrap .button {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+// -------------------------------
+// 3. Product Summary
+// -------------------------------
+
+
+.widget__ecombasketsummary {
+    .cell--header {
+        font-size: 15px;
+        font-weight: @font__h4--font-weight;
+    }
+    .summary-item-title {
+        line-height: 1.6;
+    }
+    .quantity-wrap {
+        text-align: center;
+    }
+    .button--quantity {
+        line-height: 0;
+        margin: 0;
+        vertical-align: top;
+    }
+    .quantity-field {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .order-total {
+        font-family: @font__p--font-family;
+    }
+    .button--submit {
+        border: 0;
+        color: @font-swatch7-color;
+        height: auto;
+    }
+    .image {
+        width: 100%;
+        max-width: 120px;
+        display: block;
+        min-width: 60px;
+    }
+}
+.ecom-view-more {
+    background-color: white;
+    display: block;
+    padding: 5px 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    @media @tablet800px {
+        display: none;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+    &:before {
+        color: fade(@color-swatch5, 80%);
+        content: "\f107";
+        display: block;
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 26px;
+        position: relative;
+        text-align: center;
+        .transition(all 0.5s ease);
+    }
+    &:hover:before {
+        color: darken(@color-swatch5, 10%);
+    }
+}
+
+
+
+// -----------------------------
+// 4.Basket Widget
+// -----------------------------
+
+.basket-item {
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid darken(@color__body--background, 8%);
+}
+
+.item-image  { width: 200px; }
+
+// Display basket image and content inline
+
+.basket-item-image,
+.basket-item-details {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+    @media @tablet {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+// Item Remove Button
+
+.item-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9999;
+    &:before {
+        margin-right: 0;
+    }
+}
+// Hide button text
+
+.remove-text {
+    display: none;
+}
+
+// Basket Image
+
+.basket .image {
+    max-height: 200px;
+    max-width: 200px;
+    @media @mobile {
+        max-height: inherit;
+    }
+}
+
+// Quantity Field
+
+.quantity-field {
+    background: transparent;
+    padding: 0 10px;
+}
+
+.quantity-wrap {
+    background: transparent;
+    .button--quantity {
+        width: 22px;
+        height: 22px;
+        min-height: inherit;
+        margin: 0;
+        line-height: 0;
+    }
+    // button rounded corners
+    .quantity-minus {
+        -webkit-border-radius: 3px 0 0 3px;
+        -moz-border-radius: 3px 0 0 3px;
+        border-radius: 3px 0 0 3px;
+    }
+    .quantity-plus {
+        -webkit-border-radius: 0 3px 3px 0;
+        -moz-border-radius: 0 3px 3px 0;
+        border-radius: 0 3px 3px 0;
+    }
+    // increase button size for mobile
+    @media @mobile {
+        max-width: 50%;
+        .quantity-field {
+            height: 40px;
+            padding: 9px;
+
+        }
+        .button--quantity {
+            margin: 0;
+            width: 25%;
+            height: 40px;
+        }
+    }
+}
+
+// Basket Total
+
+.basket-total {
+    font-family: @font__p--font-family;
+    padding-bottom: 20px;
+    border-bottom: 1px solid darken(@color__body--background, 8%);
+}
+
+// View Basket Button
+
+.view-basket {
+    margin: 20px 0;
+}
+
+
+// -------------------------------
+// 6. Basket Summary
+// -------------------------------
+
+
+.widget__ecombasket {
+    .basket-item-name {
+        font-size: bkscale(@font__h3--font-size, 1.05);
+    }
+    .basket-item-price {
+        line-height: 24px;
+    }
+    .item-quantity {
+        font-family: @font__button--font-family;
+        font-size: bkscale(@font__button--font-size, 0.9);
+        font-weight: @font__h4--font-weight;
+        line-height: 24px;
+        margin-top: 5px;
+        text-transform: uppercase;
+    }
+    .item-remove {
+        background-color: @color-swatch5;
+        padding: 8px 10px;
+    }
+}

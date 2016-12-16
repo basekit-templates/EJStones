@@ -1,0 +1,93 @@
+{% extends "layout.twig" %}
+{% block content %}
+
+<!-- SIDEBAR -->
+	{% include "includes/sidebar.twig" %}
+
+    <div class="zone-container">
+
+        <div class="zone-left">
+
+            <div class="zone-left-container">
+
+                    <div class="page-title">
+
+            			{{widget('pagetitle', 'page-title', {})|raw}}
+            
+        			</div>
+        
+                <!-- MAIN WIDGET ZONE -->
+                {{zone('main')|raw}}
+    
+                </div>
+        
+            </div>
+        
+            <div class="zone-right">
+    
+    
+                <div class="zone-right-container">
+
+                        <div class="page-title">
+
+            				{{widget('pagetitle', 'page-title', {})|raw}}
+            
+       			 		</div>
+            
+                    <!-- MAIN WIDGET ZONE -->
+                    {{widget('blogpostlist', 'allblogposts', {})|raw}}
+            
+                </div>
+
+            </div>
+
+        </div>
+    
+    </div>
+
+    <footer class="template-footer">
+
+            {{widget('content', 'sidebarcontent', {
+            content: '<p>Lorem ipsum dolor sit amet...</p>'
+        })|raw}}
+        
+        <div class="footer-content">
+
+        {{widget('socialicons', 'socialnetworks', {
+            'googleplus': 'https://plus.google.com/101946323226233111530',
+            'linkedin':'http://www.linkedin.com/company/mycompanyname',
+            'facebook': 'https://www.facebook.com/mycompanyname',
+            'twitter': 'https://twitter.com/mycompanyname',
+            'youtube': 'https://www.youtube.com/user/mycompanyname',
+            'rss': 'http://news.bbc.co.uk/1/hi/help/rss/default.stm',
+            'pinterest': 'https://www.pinterest.com/mycompanyname',
+            'instagram': 'https://www.instagram.com/mycompanyname'
+        })|raw}}
+
+        </div>
+
+    </footer>
+
+<!-- MASONRY GALLERY -->
+
+{% endblock %}
+
+{% block scripts %}
+
+	<!-- imagesLoaded -->
+	<script src="{{asset('js/imagesloaded.min.js')}}"></script>
+
+	<!-- Masonry -->
+	<script src="{{asset('js/masonry.min.js')}}"></script>
+
+	<script>
+		var container = document.querySelector('.gallery-list');
+
+		imagesLoaded( container, function() {
+			var msnry = new Masonry( container, {
+				itemSelector: '.gallery-item'
+			});
+		});
+	</script>
+
+{% endblock %}

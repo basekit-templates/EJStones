@@ -1,0 +1,21 @@
+<div class="sidebar">
+
+    <header class="brand">
+    <div class="company-container">
+        {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
+        {{widget('companyname', 'companyname', {"business": "profile", "showTplWidget":"0"})|raw}}
+        </div>
+        <div class="email-container">
+            {{widget('profile', 'header-email', { 'profileType':'email'})|raw}}
+        </div>
+    </header>
+
+    <nav class="nav">
+        {{widget('extendednavigation', 'header-nav', {"align":"center"})|raw}}
+    </nav>
+
+    <footer class="social">
+        {{widget('profile', 'header-social', { 'profileType':'socialicons'})|raw}}
+    </footer>
+
+</div>

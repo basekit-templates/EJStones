@@ -1,0 +1,66 @@
+<!doctype html>
+<html class="no-js" lang="{{ page.seoLang }}">
+
+    <head>
+    	<meta charset="utf-8" />
+    	<title>{{ page.title }}</title>
+    	<meta name="keywords" content="{{ page.keywords }}" />
+    	<meta name="description" content="{{ page.description }}" />
+
+    	{% if site.favicon %}
+    		<link rel="icon" href="{{ site.favicon['favicon'] }}" type="image/x-icon" />
+    		<link rel="SHORTCUT ICON" href="{{ site.favicon['thumbnail'] }}?v={{ "now"|date("U") }}" type="image/x-icon" />
+    	{% endif %}
+    	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+        <!-- jQuery -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+        <!-- Element queries -->
+        <script src="{{asset('js/elementQuery.min.js')}}"></script>
+
+    	{% include basekit.headScript %}
+    </head>
+
+    <body class="{{ page.backgroundClass }}">
+
+    	{% block content %}
+    	{% endblock %}
+
+        {% include basekit.bodyScript %}
+
+        <!-- Fast Click -->
+        <script src="{{asset('js/fastclick.js')}}"></script>
+
+    	<!-- Menu Navigation Toggle -->
+        <script>
+    		$(function() {
+    		    FastClick.attach(document.body);
+    		});
+
+        	// Toggles class open to display/hide the whole navigation
+        	$( ".navigation-toggle" ).click(function() {
+      			$( ".navigation-body" ).toggleClass( "open" );
+    		});
+
+        	// Toggles class open to display/hide folders
+    		$( ".navigation-item.folder" ).each(function() {
+    			$( this ).click(function() {
+    	  			$( this ).toggleClass( "open" );
+    			});
+    		});
+    	</script>
+
+        <!-- Parallax in feature -->
+
+        <script type="text/javascript">
+            $(document).scroll(function() {
+              $(".feature__background-image").css("top","-" + $(document).scrollTop()/2 + "px");
+            });
+        </script>
+
+    	{% block scripts %}
+    	{% endblock %}
+
+    </body>
+</html>

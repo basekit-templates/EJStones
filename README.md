@@ -1,2 +1,2 @@
-# EJStones
-Amazon Basekit Template
+# fjord
+BaseKit V8 Template
