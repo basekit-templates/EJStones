@@ -1,16 +1,12 @@
 {
-    "name": "antlers",
+    "name": "ejstones",
     "thumbnail": "thumbnail.png",
-    "screenshot" : "antlers-screenshot.jpg",
+    "screenshot" : "ejstones-screenshot.jpg",
     "widgetVersion": 2,
-    "tags": {
-        "en": ["photography", "design", "portfolio", "gallery", "camera", "images", "technology", "creative", "media"],
-        "es": ["fotografía", "diseño", "portafolio", "galería", "cámara", "imágenes", "tecnología", "creativo", "comunicación"],
-        "br": ["fotografia", "design", "portfolio", "galeria", "câmara", "imagens", "tecnologia", "criativo", "mídia"]
-    },
     "templateType":"standard",
     "pageTypes": ["home"],
     "images":[
+        "images/image-1.jpg",
         "images/feature-bg.jpg",
         "images/logo.png"
     ],
