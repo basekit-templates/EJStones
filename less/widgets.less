@@ -346,6 +346,8 @@
 	    padding: 8px 5px 16px;
         position: absolute;
         vertical-align: top;
+        border: none;
+        min-width: 0;
 
         &:after {
             color: @color__p--text;
@@ -361,11 +363,11 @@
         &.previous-button {
             left: 0;
 
-            &:after {
+            &:before {
                 content: "";
                 display: inline-block;
-                border-left: 3px solid @color__button--background;
-                border-top: 3px solid @color__button--background;
+                border-left: 3px solid @color-swatch3;
+                border-top: 3px solid @color-swatch3;
                 position: absolute;
                 left: 2px;
                 right: 0;
@@ -375,7 +377,8 @@
 
                 .transform(rotate(-45deg));
             }
-            &:before {
+
+            &:after {
                 display: none;
             }
         }
@@ -390,11 +393,11 @@
         &.next-button {
             right: 0;
 
-            &:after {
+            &:before {
                 content: "";
                 display: inline-block;
-                border-left: 3px solid @color__button--background;
-                border-top: 3px solid @color__button--background;
+                border-left: 3px solid @color-swatch3;
+                border-top: 3px solid @color-swatch3;
                 position: absolute;
                 left: 0;
                 right: 2px;
@@ -404,35 +407,44 @@
 
                 .transform(rotate(135deg));
             }
+
+            &:after {
+                display: none;
+            }
         }
     }
 }
 
 // Pause icon
-.icon--pause:before {
-    content: "";
-    display: block!important;
-    border-left: 14px solid @color__button--background;
-    border-right: 14px dashed transparent;
-    border-top: 8px dashed transparent;
-    border-bottom: 8px dashed transparent;
-
-    position: relative;
-    left: 7px;
-    right: 0;
-    margin: 0 auto;
-    top: 6px;
-
-    height: 18px;
-    width: 13px;
+.icon--pause {
+    &:before {
+        content: "";
+        display: block!important;
+        border-left: 14px solid @color-swatch3;
+        border-right: 14px dashed transparent;
+        border-top: 8px dashed transparent;
+        border-bottom: 8px dashed transparent;
+    
+        position: relative;
+        left: 7px;
+        right: 0;
+        margin: 0 auto;
+        top: 6px;
+    
+        height: 18px;
+        width: 13px;
+    }
+    &:after {
+        display: none;
+    }
 }
 
 // Play icon
 .icon--pause.pause:before {
     content: "";
     display: block;
-    border-left: 4px solid @color__button--background;
-    border-right: 4px solid @color__button--background;
+    border-left: 4px solid @color-swatch3;
+    border-right: 4px solid @color-swatch3;
     border-top: none;
     border-bottom: none;
     left: 0;
@@ -486,7 +498,7 @@
 .button,
 .read-more {
     position: relative;
-    min-width: 200px;
+    min-width: 150px;
     background-color: transparent;
     border: 0;
     outline: none;
@@ -655,7 +667,6 @@
         @media @mobile {
             margin-top: 15px;
             position: relative;
-            width: 100%;
         }
     }
 }
@@ -730,6 +741,9 @@
         font-weight: 600;
         line-height: 25px;
         margin-bottom: 4px;
+        &:hover {
+            text-decoration: none;
+        }
     }
     .account-name {
         font-family: @font__p--font-family;
@@ -791,3 +805,30 @@ hr.rule {
 .bk-map {
     margin-bottom: 15px;
 }
+
+
+
+
+// -----------------------------
+// 14. Responsive Columns
+// -----------------------------
+
+.responsivecolumns {
+
+        .button,
+        .read-more {
+            min-width: inherit;
+        }
+
+        .widget__signupform {
+            .button {
+                position: relative;
+            }
+            .form-body {
+                display: block;
+            }
+            .form-group {
+                margin-bottom: 10px;
+            }
+        }
+    }
