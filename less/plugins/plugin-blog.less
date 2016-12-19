@@ -85,7 +85,7 @@
 // Blog Post List Layout
 .blogpostlist {
 	.post-article {
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 		display: inline-block;
 		width: 100%;
 		vertical-align: top;
@@ -94,7 +94,6 @@
 		.boxshadow;
 		@media @tablet800px {
 			margin-right: 0;
-			margin-bottom: 20px;
 		}
 		&:nth-child(2n) {
 			margin-right: 0;
@@ -126,6 +125,13 @@
 		.timestamp {
 			color: @color__link--text;
 		}
+	}
+}
+
+.blogpostlist__post-list-footer {
+	margin-bottom: 40px;
+	@media @tablet800px {
+		margin-bottom: 20px;
 	}
 }
 
@@ -250,7 +256,7 @@
 	// Blog Post Title
 	.post-title {
 		color: @color__blogpost-title--text;
-		padding: 0 0 30px;
+		padding: 20px 0 20px;
 		@media @mobile {
 			font-size: bkscale(@font__h1--font-size, 0.8);
 			line-height: bkscale(@font__h1--font-size, 0.92);
@@ -266,13 +272,9 @@
 			/*background-position: center center;
 			background-size: cover;
 			height: 425px;*/
-			display: none;
-			visibility: hidden;
 		}
 		.image {
-			display: none;
-			line-height: 0;
-			visibility: hidden;
+
 		}
 	}
 
@@ -296,7 +298,6 @@
 	// Blog Footer
 	.post-footer {
 		border-top: 1px solid rgb(237,237,237);
-		margin: 60px auto 40px;
 		padding-top: 35px;
 		@media @mobile {
 			margin: 35px 0 15px;

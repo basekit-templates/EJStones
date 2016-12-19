@@ -222,8 +222,7 @@
         },
         "gallery": {
             "color__gallery-caption--background": "@color-swatch4",
-            "color__gallery-title--text": "@color-swatch1",
-            "color__gallery-description--text": "@color-swatch1"
+            "color__gallery-title--text": "@color-swatch3"
         },
         "slideshow": {
             "color__slideshow-caption--background": "@color-swatch4",
