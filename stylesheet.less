@@ -196,6 +196,7 @@ select::-ms-expand{
 
 
 
+
 // -----------------------------
 // 3. Layout
 // -----------------------------
@@ -265,7 +266,27 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
     right: 0;
     border-left: 1px solid darken(@color__body--background, 70%);
 
-.boxshadow;
+    .signupform {
+        .form-body,
+        .form-group {
+            display: block;
+        }
+        .button {
+            position: relative;
+            margin: 20px auto 0;
+        }
+    }
+
+    .twitter {
+        .tweet-wrap {
+            width: 100%;
+        }
+        .avatar {
+            float: inherit;
+        }
+    }
+
+    .boxshadow;
 
     @media only screen and (min-width: 800px) {
         .justify-content(space-between);
@@ -321,7 +342,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
 }
 
 .email-container {
-    padding: 20px 0;
+    padding: 20px;
     border-top: 1px solid darken(@color__body--background, 70%);
     border-bottom: 1px solid darken(@color__body--background, 70%);
     h1, h2, h3, h4, p, a {
