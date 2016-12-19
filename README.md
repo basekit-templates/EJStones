@@ -1,2 +1,2 @@
-# fjord
-BaseKit V8 Template
+# Ejstones
+Amazon BaseKit V8 Template
