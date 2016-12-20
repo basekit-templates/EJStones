@@ -46,7 +46,7 @@
 
 body {
     background-color: @color__body--background;
-    background-image: image('/images/background-texture.png');
+    background-image: image('/images/background-texture.jpg');
 }
 
 // Links
@@ -265,7 +265,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
     z-index: 1;
     text-align: center;
     right: 0;
-    border-left: 1px solid darken(@color__body--background, 70%);
+    border-left: 1px solid darken(@color__body--background, 67%);
 
     .signupform {
         .form-body,
@@ -320,7 +320,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
         }
     }
     .social {
-        margin: auto 0 25px;
+        margin: auto 0 5px;
         @media @tablet800px {
             display: none;
         }
@@ -440,8 +440,11 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
         display: none;
     }
     .copyright {
-        font-size: bkscale(@font__p--font-size, 0.96);
+        font-size: bkscale(@font__p--font-size, 0.80);
         margin-top: 12px;
+        font-family: @font__h4--font-family;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 }
 

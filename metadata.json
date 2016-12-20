@@ -7,7 +7,7 @@
     "pageTypes": ["home"],
     "images":[
         "images/image-1.jpg",
-        "images/feature-bg.jpg",
+        "images/background-texture.jpg",
         "images/logo.png"
     ],
     "colorSwatches":
@@ -104,7 +104,7 @@
         },
         "font10": {
             "font-family": "\"Dosis\", \"Oswald\", Arial, sans-serif",
-            "font-size": "26px",
+            "font-size": "40px",
             "font-weight": "400",
             "line-height": "inherit",
             "color": "@color-swatch4",

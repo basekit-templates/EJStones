@@ -2,8 +2,8 @@
 
     <header class="brand">
     <div class="company-container">
-        {{widget('logo', 'header-logo', {"defaultlogo": asset('images/logo.png')})|raw}}
-        {{widget('companyname', 'companyname', {"business": "profile", "showTplWidget":"0"})|raw}}
+            {{widget('logo', 'logo', {"defaultlogo": asset('images/logo.png'),"showTplWidget":"0"})|raw}}
+            {{widget('companyname', 'companyname', {"business": "profile"})|raw}}
         </div>
         <div class="email-container">
             {{widget('profile', 'header-email', { 'profileType':'email'})|raw}}
@@ -15,7 +15,7 @@
     </nav>
 
     <footer class="social">
-        {{widget('profile', 'header-social', { 'profileType':'socialicons'})|raw}}
+        {{widget('profile', 'copyright', { 'profileType':'copyright'})|raw}}
     </footer>
 
 </div>
