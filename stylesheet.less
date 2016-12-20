@@ -83,14 +83,14 @@ blockquote {
 }
 
 // Pre + Code
-pre { 
+pre {
     font-size: 14px;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
-code { 
+code {
     padding: 2px 5px;
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 // Buttons
@@ -360,7 +360,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
         padding: 20px 0;
     }
     @media @mobile {
-        padding: 10px 0; 
+        padding: 10px 0;
     }
 }
 
@@ -645,7 +645,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
     align-items: flex-start;
 
     background-color: @color__container--background;
-    padding: 0 20% 0 5%;
+    padding: 0 20% 0 115px;
 
     @media @tablet800px {
         width: 100%;
@@ -977,9 +977,14 @@ h2 {
 // Template Footer
 .template-footer {
     background-color: @color__footer--background;
-    width: 5%;
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    padding: 20px 20px 10px;
+    justify-content: center;
+    align-items: flex-end;
+    width: 115px;
     height: auto;
-    padding: 0;
     position: fixed;
     top: 0;
     bottom: 0;
@@ -995,34 +1000,34 @@ h2 {
 
     .extra-info-heading {
         .rotate(90deg);
-                -webkit-order: 0;
-    -ms-flex-order: 0;
-    order: 0;
-    -webkit-flex: 1 1 auto;
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    -webkit-align-self: auto;
-    -ms-flex-item-align: auto;
-    align-self: auto;
+        padding: 0;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        white-space: nowrap;
+
         @media @tablet800px {
             .rotate(0);
+            margin-bottom: 15px;
+            position: relative;
+            top: initial;
         }
     }
 
     .footer-content {
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-        -webkit-flex: 1 1 auto;
-        -ms-flex: 1 1 auto;
-        flex: 1 1 auto;
-        -webkit-align-self: auto;
-        -ms-flex-item-align: auto;
-        align-self: auto;
     }
+
     .bk-socialicons .social-item {
-        margin-right: 0;
+        display: block;
+        margin: 0 auto;
         width: 45px;
+        text-align: center;
+
+        @media @tablet800px {
+            display: inline-block;
+        }
     }
     @media @tablet800px {
         width: 100%;
