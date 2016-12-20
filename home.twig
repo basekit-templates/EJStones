@@ -31,26 +31,26 @@
 
         </div>
 
-            <footer class="template-footer">
+        <footer class="template-footer">
 
-        <h4 class="extra-info-heading"> {{ profile.business }} </h4>
+            <h4 class="extra-info-heading"> {{ profile.business }} </h4>
         
-        <div class="footer-content">
+            <div class="footer-content">
+    
+            {{widget('socialicons', 'socialnetworks', {
+                'googleplus': 'https://plus.google.com/101946323226233111530',
+                'linkedin':'http://www.linkedin.com/company/mycompanyname',
+                'facebook': 'https://www.facebook.com/mycompanyname',
+                'twitter': 'https://twitter.com/mycompanyname',
+                'youtube': 'https://www.youtube.com/user/mycompanyname',
+                'rss': 'http://news.bbc.co.uk/1/hi/help/rss/default.stm',
+                'pinterest': 'https://www.pinterest.com/mycompanyname',
+                'instagram': 'https://www.instagram.com/mycompanyname'
+            })|raw}}
+    
+            </div>
 
-        {{widget('socialicons', 'socialnetworks', {
-            'googleplus': 'https://plus.google.com/101946323226233111530',
-            'linkedin':'http://www.linkedin.com/company/mycompanyname',
-            'facebook': 'https://www.facebook.com/mycompanyname',
-            'twitter': 'https://twitter.com/mycompanyname',
-            'youtube': 'https://www.youtube.com/user/mycompanyname',
-            'rss': 'http://news.bbc.co.uk/1/hi/help/rss/default.stm',
-            'pinterest': 'https://www.pinterest.com/mycompanyname',
-            'instagram': 'https://www.instagram.com/mycompanyname'
-        })|raw}}
-
-        </div>
-
-    </footer>
+        </footer>
     
     </div>
 

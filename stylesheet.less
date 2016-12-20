@@ -48,6 +48,30 @@ body {
     background-image: image('/images/background-texture.png');
 }
 
+// Feature Toggle Buttons
+// ----------------------
+
+.columns-four-first,
+.columns-four-second,
+.columns-four-third,
+.columns-four-fourth,
+.columns-three-left,
+.columns-three-right,
+.columns-three-middle {
+
+[data-name="image"] .widget-overlay .widget__list .widget__item {
+    &:nth-child(4) {
+        position: absolute;
+        top: 42px;
+    }
+    &:nth-child(5) {
+        position: absolute;
+        top: 42px;
+        left: 44px;
+    }
+}
+}
+
 // Links
 .content-widget a {
     border-bottom: 1px dotted @color__link--text;
@@ -666,9 +690,9 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
-    -webkit-flex: 1 1 60%;
-    -ms-flex: 1 1 60%;
-    flex: 1 1 60%;
+    -webkit-flex: 1 1 58%;
+    -ms-flex: 1 1 58%;
+    flex: 1 1 58%;
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
