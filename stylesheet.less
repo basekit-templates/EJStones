@@ -268,12 +268,21 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
     border-left: 1px solid darken(@color__body--background, 67%);
 
     .signupform {
+        legend {
+            margin: 10px auto;
+        }
         .form-body,
         .form-group {
             display: block;
         }
         input {
             background-color: lighten(@color__header--background,5%);
+            &:focus {
+               background-color: lighten(@color__header--background,5%); 
+            }
+            &:hover {
+                background-color: lighten(@color__header--background,5%);
+            }
         }
         .button {
             position: relative;
@@ -287,6 +296,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
         }
         .avatar {
             float: inherit;
+            margin-right: 0;
         }
     }
 
@@ -317,7 +327,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
         }
     }
     .social {
-        margin: auto 2% 5px;
+        margin: auto 2% 5%;
         @media @tablet800px {
             display: none;
         }
