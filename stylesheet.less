@@ -49,6 +49,20 @@ body {
     background-image: image('/images/background-texture.jpg');
 }
 
+.bk-zone {
+    padding: 2% 2% 2%;
+    height: 100vh;
+    @media @tablet {
+        padding: 0;
+        height: 100%;
+    }
+}
+
+.page-title {
+    text-align: center;
+    padding: 10px;
+}
+
 // Links
 .content-widget a {
     border-bottom: 1px dotted @color__link--text;
@@ -697,14 +711,6 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
         display: block;
         height: 100%;
         overflow-y: inherit;
-    }
-}
-
-.zone-left-container {
-    padding: 2% 2% 2% 0;
-
-    @media @tablet {
-        padding: 0;
     }
 }
 
