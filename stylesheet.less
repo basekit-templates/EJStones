@@ -407,6 +407,15 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
     }
 }
 
+// Widget Overlay 
+[data-widget-type="socialicons"] .widget-overlay .widget__list .widget__item {
+    &:nth-child(2) {
+        position: absolute;
+        top: 42px;
+    }
+}
+
+
 // Twitter Feed
 // ------------
 
@@ -1060,13 +1069,6 @@ h2 {
             position: absolute;
             top: 42px;
             left: 44px;
-        }
-    }
-
-    [data-widget-type="socialicons"] .widget-overlay .widget__list .widget__item {
-        &:nth-child(2) {
-            position: absolute;
-            top: 42px;
         }
     }
 }
