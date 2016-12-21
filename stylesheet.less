@@ -349,6 +349,9 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
     h1, h2, h3, h4, p, a {
         color: @color__p--text;
     }
+    a {
+        word-wrap: break-word;
+    }
 }
 
 .company-container {
@@ -1057,6 +1060,13 @@ h2 {
             position: absolute;
             top: 42px;
             left: 44px;
+        }
+    }
+
+    [data-widget-type="socialicons"] .widget-overlay .widget__list .widget__item {
+        &:nth-child(2) {
+            position: absolute;
+            top: 42px;
         }
     }
 }
