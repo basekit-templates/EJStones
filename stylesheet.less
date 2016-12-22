@@ -50,7 +50,7 @@ body {
 }
 
 .bk-zone {
-    padding: 2% 2% 2%;
+    padding: 2% 6% 2% 0;
     height: 100vh;
     @media @tablet {
         padding: 0;
@@ -61,6 +61,7 @@ body {
 .page-title {
     text-align: center;
     padding: 10px;
+    margin-top: 20px;
 }
 
 // Links
@@ -728,6 +729,7 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
 
     height: 100vh;
     overflow-y: auto;
+    border-left: 1px solid darken(@color__body--background, 60%);
 
     @media @tablet800px {
         width: 100%;
@@ -739,6 +741,10 @@ div[data-widget-type="feature"].bk-tpl-hidden + .home-page {
 
 .zone-right-container {
     padding: 2% 4% 2% 0;
+    .blogpostlist .post-article {
+        box-shadow: none;
+        background-color: transparent;
+    }
     @media @tablet {
         padding: 0;
     }
