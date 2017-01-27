@@ -275,6 +275,143 @@
     width: 100%;
 }
 
+.widget__gallery {
+    // Gallery List
+    .gallery-list {
+        .clearfix;
+        padding-top: 10px;
+        &:hover li {
+            opacity: 0.3;
+        }
+    }
+    // Gallery Item
+    .gallery-item {
+        display: inline-block;
+        float: left;
+        margin-right: 3.33%;
+        position: relative;
+        width: 30%!important;
+        margin-bottom: 2%;
+        vertical-align: top;
+        &:nth-child(3n) {
+            margin-right: 0!important;
+        }
+        // Display at 50% at tablet
+        @media @tablet800px {
+            width: 48%;
+            &:nth-child(2n) {
+                margin-right: 0!important;
+            }
+            &:nth-child(3n) {
+                margin-right: 3.33%;
+            }
+        }
+        // Display at 100% at mobile
+        @media @mobile {
+            margin-right: 0!important;
+            width: 100%;
+            margin-bottom: 4%;
+        }
+        .image-link {
+            -webkit-filter: grayscale(0%);
+            .transition(all 0.5s ease-in-out);
+        }
+        &:hover {
+            opacity: 1!important;
+            .image-link {
+                background-blend-mode: multiply;
+                opacity: 0.85;
+                -webkit-filter: grayscale(25%);
+                text-decoration: none;
+            }
+            figcaption {
+                background-color: fade(@color-swatch4, 65%);
+                display: flex;
+                height: 100%;
+                opacity: 1;
+                .transform(scale(0.85));
+                .transition(all 0.5s ease-in-out);
+                visibility: visible;
+                overflow: hidden;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    height: 10px;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    .gradient(fade(@color-swatch4, 0%), fade(@color-swatch4, 10%));
+                }
+            }
+        }
+    }
+    .gallery__figure {
+        .transform(scale(1));
+        .transition(all 0.5s ease-in-out);
+        &:hover {
+            .transform(scale(1.05));
+        }
+    }
+    // Hide Figcaption
+    figcaption {
+        // Flex
+        display: flex;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        display: block;
+        height: 0;
+        margin: 0;
+        padding: 0 15px;
+        opacity: 0;
+        text-align: center;
+        top: 0;
+        .transform(scale(0.85));
+        width: 100%;
+        visibility: hidden;
+        @media @mobile {
+            left: 0;
+        }
+        .caption-link:hover {
+            text-decoration: none;
+        }
+        .image-title {
+            color: @color-swatch1;
+            text-transform: uppercase;
+            font-family: @font-swatch4-font-family;
+            letter-spacing: 1px;
+            font-size: 15px;
+            display: block;
+            padding: 6px 12px 5px;
+        }
+        .image-description {
+            color: darken(@color-swatch1, 15%);
+            font-size: 15px;
+            line-height: 23px;
+        }
+    }
+    // Use Background Image
+    .image-link {
+        display: block;
+        padding-bottom: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        // Hide Inline Image
+        .image {
+            display: none;
+        }
+    }
+}
+.widget__gallery .gallery-item:hover figcaption {
+    background-color: @color__primary;
+}
 
 
 // -----------------------------
@@ -368,7 +505,7 @@
         background-color: @color__body--background;
         height: 100px;
         width: 40px;
-	    padding: 8px 5px 16px;
+        padding: 8px 5px 16px;
         position: absolute;
         vertical-align: top;
         border: none;
@@ -585,7 +722,7 @@
 }
 
 .phone-number-link {
-	text-rendering: initial;
+    text-rendering: initial;
 
     @media @tablet {
         // Applies button styles at mobile
@@ -717,7 +854,7 @@
         height: 35px;
         width: 35px;
         text-align: center;
-		line-height: 33px;
+        line-height: 33px;
         .transition(all 0.5s ease-out);
         .border-radius(2px);
     }
@@ -790,7 +927,7 @@
         font-size: bkscale(@font__p--font-size, 0.85)
     }
     .tweet-metadata a {
-	    color: darken(@font-swatch6-color, 15%);
+        color: darken(@font-swatch6-color, 15%);
     }
 }
 
