@@ -221,8 +221,8 @@
             "color__image-description--text": "@font-swatch5-color"
         },
         "gallery": {
-            "color__gallery-caption--background": "@color-swatch4",
-            "color__gallery-title--text": "@color-swatch3"
+            "color__gallery-caption--background": "@color-swatch3",
+            "color__gallery-title--text": "@color-swatch4"
         },
         "slideshow": {
             "color__slideshow-caption--background": "@color-swatch4",
