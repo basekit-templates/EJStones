@@ -71,10 +71,20 @@
 
 // Positioning for the feature widget (div[data-widget-type="feature"]) is also set up in stylesheet.less
 
+.feature-container {
+    margin: 20px 20px 20px 0;
+    @media @tablet {
+        margin: 0 0 20px 0;
+    }
+}
+
 .feature {
     .background-image,
     .content-wrap {
-        min-height: 680px;
+        min-height: 630px;
+        @media @tablet {
+            min-height: 470px;
+        }
         @media only screen and (max-width: 600px) {
             min-height: 340px;
         }
@@ -97,13 +107,6 @@
             opacity: 0.3;
         }
 
-        height: 100vh;
-        position: absolute;
-        top:0px;
-        left:0;
-        right:0px;
-        z-index: 0;
-
         @media only screen and (max-width: 1024px) {
             height: auto;
             position: relative;
@@ -111,7 +114,7 @@
     }
     .content-wrap {
 
-        padding: 20px 20px 50px 70px;
+        padding: 20px 20px 20px 40px;
         @media only screen and (max-width: 1250px) {
             padding: 20px 20px 50px 95px;
         }
@@ -184,6 +187,19 @@
     }
 }
 
+// Feature Image and Text Size on Mobile
+@media only screen and (max-width : 400px) {
+    .feature {
+        .headline {
+            font-size: bkscale(@font__feature-headline--font-size, .6);
+            line-height: bkscale(@font__feature-headline--line-height, .6);
+        }
+        .strapline {
+            font-size: bkscale(@font__feature-strapline--font-size, .8);
+            line-height: bkscale(@font__feature-strapline--line-height, .8);
+        }
+    }
+}
 
 
 
@@ -231,6 +247,15 @@
 // Gallery Layout
 // --------------
 
+.zone-right {
+    .widget__gallery {
+        max-width: 90%;
+        margin: 0px auto;
+        @media @tablet {
+            max-width: 100%;
+        }
+    }
+}
 
 
 // Gallery Images
